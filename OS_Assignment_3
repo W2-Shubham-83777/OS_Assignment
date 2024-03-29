@@ -1,0 +1,537 @@
+	1. ls
+		ls -a
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ cd dir1
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat > .hidden.txt
+		hide me
+		hide all
+		hide hide 
+		hide to allssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ls -a
+		.  ..  Datas.txt  data.txt  .hidden.txt  m2  MyInfo.txt  one  repeat.txt taste.txt
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$
+		
+	2. rename
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ touch Test2.txt Test3.txt Test4.txt Test5.txt
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ ls -l
+	total 32
+	
+	-rw-rw-r-- 1 ssj ssj   47 Mar 27 00:13 Test1.txt
+	-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 Test2.txt
+	-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 Test3.txt
+	-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 Test4.txt
+	-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 Test5.txt
+
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ rename "s/Test/File/" *.txt
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ ls -l
+	total 8
+	-rw-rw-r-- 1 ssj ssj 47 Mar 27 00:13 File1.txt
+	-rw-rw-r-- 1 ssj ssj 26 Mar 28 18:11 File2.txt
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File3.txt
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File4.txt
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File5.txt
+	
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ rename "s/.txt/.htm/" *.txt
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1/File$ ls -l
+	total 8
+	-rw-rw-r-- 1 ssj ssj 47 Mar 27 00:13 File1.htm
+	-rw-rw-r-- 1 ssj ssj 26 Mar 28 18:11 File2.htm
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File3.htm
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File4.htm
+	-rw-rw-r-- 1 ssj ssj  0 Mar 28 17:06 File5.htm
+
+
+	
+	3. ln -s
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ln -s flat.txt Room.txt
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ls -l -i flat.txt Room.txt
+		5666683 -rw-rw-r-- 1 ssj ssj 31 Mar 28 17:17 flat.txt
+		5666684 lrwxrwxrwx 1 ssj ssj  8 Mar 28 17:24 Room.txt -> flat.txt
+
+	
+	
+	4. ln
+	
+		own managedssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ln pg.txt PG1.txt
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ls -l -i pg.txt PG1.txt
+		5666682 -rw-rw-r-- 2 ssj ssj 27 Mar 28 17:16 PG1.txt
+		5666682 -rw-rw-r-- 2 ssj ssj 27 Mar 28 17:16 pg.txt
+		
+
+		
+	5. stat
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ stat MyInfo.txt
+		  File: MyInfo.txt
+		  Size: 33        	Blocks: 8          IO Block: 4096   regular file
+		Device: 10305h/66309d	Inode: 5663983     Links: 1
+		Access: (0664/-rw-rw-r--)  Uid: ( 1000/     ssj)   Gid: ( 1000/     ssj)
+		Access: 2022-03-25 12:00:00.000000000 +0530
+		Modify: 2022-03-25 12:00:00.000000000 +0530
+		Change: 2024-03-26 00:35:13.457773706 +0530
+		 Birth: 2024-03-26 00:26:04.133025008 +0530
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ 
+		
+		
+	
+		
+	6. touch
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ touch -t 202212160256 MyInfo.txt
+			ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ stat MyInfo.txt
+			  File: MyInfo.txt
+			  Size: 33        	Blocks: 8          IO Block: 4096   regular file
+			Device: 10305h/66309d	Inode: 5663983     Links: 1
+			Access: (0664/-rw-rw-r--)  Uid: ( 1000/     ssj)   Gid: ( 1000/     ssj)
+			Access: 2022-12-16 02:56:00.000000000 +0530
+			Modify: 2022-12-16 02:56:00.000000000 +0530
+			Change: 2024-03-27 00:08:54.673487127 +0530
+			 Birth: 2024-03-26 00:26:04.133025008 +0530
+			ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ 
+			
+	
+	7. touch
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ touch empty.txt
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat empty.txt
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ 
+
+	
+
+
+	8 tail
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ touch Datas.txt
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat > Datas.txt
+	5
+	68
+	349
+	248
+	21
+	60
+	2
+	3
+	4
+	6
+	5
+	10
+	20
+	40
+	60
+	30
+	50
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat  Datas.txt
+	5
+	68
+	349
+	248
+	21
+	60
+	2
+	3
+	4
+	6
+	5
+	10
+	20
+	40
+	60
+	30
+	50
+
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ tail -13 Datas.txt
+	21
+	60
+	2
+	3
+	4
+	6
+	5
+	10
+	20
+	40
+	60
+	30
+	50
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ 
+	
+	
+	9. init 0,poweroff
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ sudo init 0
+		[sudo] password for ssj: 
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ sudo poweroff
+		[sudo] password for ssj: 
+	
+	10. init 6,reboot
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ sudo init 6
+		[sudo] password for ssj: 
+		
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ sudo reboot
+	 	[sudo] password for ssj: 
+	
+	
+	12. whoami
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ whoami
+		ssj
+
+	13. tty
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ tty
+		/dev/pts/0
+		 
+	
+	14. who am i
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ who am i
+		ssj      ? :1           2024-03-27 04:06 (:1)
+
+	15. users
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ users
+		ssj
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ 
+		
+	16. who
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ who
+		ssj      :1           2024-03-27 04:06 (:1)
+
+	17. grep :-
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~$ cd dir1
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat > taste.txt
+		This
+		biscuit
+		isnt
+		good but
+		that cake
+		is    
+		really tasty
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "cake" taste.txt
+		that cake
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "is" taste.txt
+		This
+		biscuit
+		isnt
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -c "is" taste.txt
+		4
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -n "is" taste.txt
+		1:This
+		2:biscuit
+		3:isnt
+		6:is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -w "is" taste.txt
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -i "Is" taste.txt
+		This
+		biscuit
+		isnt
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -v "Is" taste.txt
+		This
+		biscuit
+		isnt
+		good but
+		that cake
+		is
+		really tasty
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -v "is" taste.txt
+		good but
+		that cake
+		really tasty
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "^is" taste.txt
+		isnt
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "is$" taste.txt
+		This
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "^is$" taste.txt
+		is
+
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ 
+
+
+	egrep :-
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ touch repeat.txt
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat >  repeat.txt
+		dc
+		dmc
+		dmmc
+		dmmmc
+		dmmmmc
+		dmmmmmc
+		dmmmmmmc
+		dmmmmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat  repeat.txt
+		dc
+		dmc
+		dmmc
+		dmmmc
+		dmmmmc
+		dmmmmmc
+		dmmmmmmc
+		dmmmmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep "dm?c" repeat.txt
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ grep -E "dm?c" repeat.txt
+		dc
+		dmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm?c" repeat.txt
+		dc
+		dmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm+c" repeat.txt
+		dmc
+		dmmc
+		dmmmc
+		dmmmmc
+		dmmmmmc
+		dmmmmmmc
+		dmmmmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm{2}c" repeat.txt
+		dmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm{4,}c" repeat.txt
+		dmmmmc
+		dmmmmmc
+		dmmmmmmc
+		dmmmmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm{,4}c" repeat.txt
+		dc
+		dmc
+		dmmc
+		dmmmc
+		dmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "dm{2,4}c" repeat.txt
+		dmmc
+		dmmmc
+		dmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "d[m]c" repeat.txt
+		dmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "d[mm]c" repeat.txt
+		dmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "d(mm)c" repeat.txt
+		dmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "d(mm){2}c" repeat.txt
+		dmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ egrep "d(mm){3}c" repeat.txt
+		dmmmmmmc
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$
+
+
+	fgrep :-
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ fgrep "dmc" repeat.txt
+		dmc
+
+
+
+
+	18. chmod ( Make a file as read-only )
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/Shell_Script$ chmod 444 Day1_1.sh
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/Shell_Script$ ls -l
+	total 4
+	-r--r--r-- 1 ssj ssj 67 Mar 28 15:55 Day1_1.sh
+
+
+	
+	
+	19. chmod (  Make a file as write, read and execute  )
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/Shell_Script$ chmod 744 Day1_1.sh
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/Shell_Script$ ls -l
+	total 4
+	-rwxr--r-- 1 ssj ssj 67 Mar 28 15:55 Day1_1.sh
+
+	
+	20. wc (using redirection)
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat > File2.txt
+		user
+		who
+		touch
+		rename
+		cut 
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ wc < File2.txt > Out.txt
+		
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ cat Out.txt
+		 4  5 26
+
+	
+	21. who| wc (using pipe)
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ who | wc
+	     	 1       5      44
+
+	
+	
+	22. head, tail (using pipe)
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ head -n 10 File1.txt | tail -n 5
+		60
+		2
+		3
+		4
+		6
+
+	23. sort, uniq (using pipe)
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ sort -n File1.txt
+		2
+		3
+		4
+		5
+		5
+		6
+		10
+		20
+		21
+		30
+		40
+		50
+		60
+		60
+		68
+		248
+		349
+		
+		manqqssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ sort -n File1.txt | uniq
+		2
+		3
+		4
+		5
+		6
+		10
+		20
+		21
+		30
+		40
+		50
+		60
+		68
+		248
+		349
+
+	
+	
+	24. who, grep (using pipe)m
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ who | grep -v "tty2"
+		ssj      :1           2024-03-29 14:02 (:1)
+
+	
+	
+	25. ls 
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ls -S -lh
+		total 44K
+		drwxrwxr-x 2 ssj ssj 4.0K Mar 25 17:30 m2
+		drwxrwxr-x 3 ssj ssj 4.0K Mar 26 00:40 one
+		-rw-rw-r-- 1 ssj ssj  144 Mar 27 00:50 data.txt
+		-rw-rw-r-- 1 ssj ssj   52 Mar 27 00:29 taste.txt
+		-rw-rw-r-- 1 ssj ssj   51 Mar 27 00:39 repeat.txt
+		-rw-rw-r-- 1 ssj ssj   47 Mar 27 00:13 File1.txt
+		-rw-rw-r-- 1 ssj ssj   39 Mar 27 18:29 Courses.txt
+		-rw-rw-r-- 1 ssj ssj   33 Dec 16  2022 MyInfo.txt
+		-rw-rw-r-- 1 ssj ssj   31 Mar 28 17:17 flat.txt
+		-rw-rw-r-- 2 ssj ssj   27 Mar 28 17:16 PG1.txt
+		-rw-rw-r-- 2 ssj ssj   27 Mar 28 17:16 pg.txt
+		lrwxrwxrwx 1 ssj ssj    8 Mar 28 17:24 Room.txt -> flat.txt
+		-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:25 empty.txt
+		-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 File2.txt
+		-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 File3.txt
+		-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 File4.txt
+		-rw-rw-r-- 1 ssj ssj    0 Mar 28 17:06 File5.txt
+
+	
+	26. ls, grep (using pipe)
+	
+		ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ ls | grep "pg"
+		pg.txt
+
+	
+	
+	27. ls, grep (using pipe)
+	
+	    ssj@ssj-Lenovo-Legion-5-15IMH05:~/CoreJava_240344221026/Exam_83777$ ls -a | grep "^\."
+		.
+		..
+		.classpath
+		.project
+		.settings
+
+	
+	
+	28. tr
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/CoreJava_240344221026/Exam_83777$ echo "Os Linux Assignments" | tr "a-z" "A-Z"
+        OS LINUX ASSIGNMENTS
+        
+        
+        ssj@ssj-Lenovo-Legion-5-15IMH05:~/CoreJava_240344221026/Exam_83777$ echo -e "line 1\n\nline 2" | tr -s '\n'
+	line 1
+	line 2
+
+        
+	
+	
+	
+	29. cut
+	
+	ssj@ssj-Lenovo-Legion-5-15IMH05:~/dir1$ echo "What is Shell? Type of Shell in Linux" | cut -d " " -f2,3,4,5,6
+	is Shell? Type of Shell
+
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
